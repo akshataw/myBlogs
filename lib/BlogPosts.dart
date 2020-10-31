@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -6,7 +8,7 @@ class BlogPosts extends StatelessWidget {
 
   Future<List<dynamic>> fetchPosts() async {
     var result = await http.get(apiUrl);
-    console.log(result);
+    print(result);
     return json.decode(result.body)['results'];
   }
 
